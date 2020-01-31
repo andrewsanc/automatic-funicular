@@ -7,9 +7,14 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      users: []
+      users: [],
+      searchTerm: ""
     };
   }
+
+  onInputChange = searchTerm => {
+    this.setState({ searchTerm: searchTerm });
+  };
 
   componentDidMount() {
     fetch("https://jsonplaceholder.typicode.com/users")
@@ -18,12 +23,15 @@ class App extends Component {
   }
 
   render() {
-    const { users } = this.state;
+    const { users, searchTerm } = this.state;
+    const filteredUsers = users.filter(user => {
+      return user.name.toLowerCase().includes(searchTerm.toLowerCase());
+    });
 
     return (
       <div className="app">
-        <SearchBar />
-        <CardList users={users} />
+        <SearchBar onInputChange={this.onInputChange} />
+        <CardList users={filteredUsers} />
       </div>
     );
   }
