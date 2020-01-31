@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import CardList from "../CardList/CardList";
+import SearchBar from "../SearchBar/SearchBar";
 
 class App extends Component {
   constructor() {
@@ -21,9 +22,7 @@ class App extends Component {
 
     return (
       <div className="app">
-        <div className="search">
-          <h4>Search Bar</h4>
-        </div>
+        <SearchBar />
         <CardList users={users} />
       </div>
     );
