@@ -3,3 +3,10 @@
   flex-direction: column;
   align-items: center;
 }
+
+h1 {
+  font-family: "Bigelow Rules", cursive;
+  font-size: 72px;
+  margin-bottom: 10px;
+  color: #0ccac4;
+}

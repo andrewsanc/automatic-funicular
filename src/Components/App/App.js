@@ -30,6 +30,7 @@ class App extends Component {
 
     return (
       <div className="app">
+        <h1>Monsters Rolodex</h1>
         <SearchBar onInputChange={this.onInputChange} />
         <CardList users={filteredUsers} />
       </div>
